@@ -1,0 +1,27 @@
+{
+  "name": "@practera/jwt-parser",
+  "version": "1.0.0",
+  "description": "Verifies using public keys and parses a JWT",
+  "license": "MIT",
+  "repository": "intersective/jwt-parser",
+  "main": "index.js",
+  "keywords": [
+    "practera",
+    "intersective",
+    "jwt"
+  ],
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "test": "nyc --reporter=lcov --reporter=html --reporter=text-summary mocha -- ./tests --recursive"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "mocha": "^8.2.0",
+    "nyc": "^15.1.0"
+  }
+}
