@@ -14,9 +14,9 @@ $ npm install @practera/jwt-parser
 const jwtParser = require("@practera/jwt-parser");
 
 jwtContents = jwtParser.parse(
-            token,
-            process.env,
-            service, // this will identify what public key to use to validate the token
-            ['RS256'],
-          );
+  token,
+  process.env,
+  service, // this will identify what public key to use to validate the token
+  ['RS256'],
+);
 ```
