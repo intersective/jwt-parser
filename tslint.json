@@ -5,6 +5,7 @@
     "max-line-length": [true, 200],
     "indent": [true, "spaces", 2],
     "ter-arrow-parens": [true, "as-needed"],
-    "object-shorthand-properties-first": false
+    "object-shorthand-properties-first": false,
+    "prefer-template": false
   }
 }

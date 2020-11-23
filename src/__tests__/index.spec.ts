@@ -1,4 +1,4 @@
-import jwtParser from '../lib';
+import jwtParse from '../../lib';
 
 let res: any;
 
@@ -6,7 +6,7 @@ afterEach(() => {
   expect(res).toMatchSnapshot();
 });
 
-it('1. it should return the correct values', function() {
+it('1. it should return the correct values', () => {
   const token = 'ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0.' +
     'ewogICJjb250ZW50cyI6ICJjb250ZW50cyBvZiB0aGUgSldUIgp9.' +
     'jzou9_ga85x28objtX3poBGHOQ_KgIDFDmMw0NqLDjwbNHW-2bx8P' +
@@ -27,5 +27,5 @@ it('1. it should return the correct values', function() {
     '-----END PUBLIC KEY-----'}),
   };
   // sign with RSA SHA256
-  res = jwtParser(token, envVariables, 'TEST', ['RS256']);
+  res = jwtParse(token, envVariables, 'TEST', ['RS256']);
 });

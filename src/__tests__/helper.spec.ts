@@ -1,4 +1,4 @@
-import { getPublicKey, parse } from './helper';
+import { getPublicKey, parse } from '../helper';
 
 let res: any;
 
@@ -6,39 +6,39 @@ afterEach(() => {
   expect(res).toMatchSnapshot();
 });
 
-describe('1. getPublicKey tests', function() {
-  describe('1.1 when the service is not defined it should return the DEFAULT key', function() {
-    it('1.1.1 The DEFAULT key was returned', function() {
+describe('1. getPublicKey tests', () => {
+  describe('1.1 when the service is not defined it should return the DEFAULT key', () => {
+    it('1.1.1 The DEFAULT key was returned', () => {
       res = getPublicKey({
-        DEFAULT_JWT: JSON.stringify({public: 'default key'}),
-      }, undefined);
+        DEFAULT_JWT: JSON.stringify({ public: 'default key' }),
+      },                 undefined);
     });
   });
-  describe('1.2 when the service is defined it should return that key', function() {
-    it('1.2.1 The PRACTERA key was returned', function() {
+  describe('1.2 when the service is defined it should return that key', () => {
+    it('1.2.1 The PRACTERA key was returned', () => {
       res = getPublicKey({
-        PRACTERA_JWT: JSON.stringify({public: 'a key'}),
-      }, 'PRACTERA');
+        PRACTERA_JWT: JSON.stringify({ public: 'a key' }),
+      },                 'PRACTERA');
     });
   });
-  describe('1.3 when the service does not match anything in the environmental variables', function() {
-    it('1.3.1 it should throw an error because UNKNOWN_JWT is not defined', function() {
+  describe('1.3 when the service does not match anything in the environmental variables', () => {
+    it('1.3.1 it should throw an error because UNKNOWN_JWT is not defined', () => {
       try {
         getPublicKey({
-          DEFAULT_JWT: JSON.stringify({public: 'default key again'}),
-        }, 'UNKNOWN');
+          DEFAULT_JWT: JSON.stringify({ public: 'default key again' }),
+        },           'UNKNOWN');
       } catch (e) {
         res = e;
       }
     });
   });
 
-  describe('1.4 when the service is correct, the variable exists but its contents are incorrect', function() {
-    it('1.4.1 it should throw an error because the public key is invalid', function() {
-      try{
+  describe('1.4 when the service is correct, the variable exists but its contents are incorrect', () => {
+    it('1.4.1 it should throw an error because the public key is invalid', () => {
+      try {
         getPublicKey({
           BAD_JWT: 'default key again',
-        }, 'BAD');
+        },           'BAD');
       } catch (e) {
         res = e;
       }
@@ -46,9 +46,9 @@ describe('1. getPublicKey tests', function() {
   });
 });
 
-describe('2. parse tests', function() {
-  describe('2.1 test parse when service is PRACTERA', function() {
-    it('2.1.1 it should return the correct values', function() {
+describe('2. parse tests', () => {
+  describe('2.1 test parse when service is PRACTERA', () => {
+    it('2.1.1 it should return the correct values', () => {
       try {
         parse(
           '11111ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0.' +
@@ -79,8 +79,8 @@ describe('2. parse tests', function() {
     });
   });
 
-  describe('2.2 test parse when service is PRACTERA', function() {
-    it('2.2.1 it should return the correct values', function() {
+  describe('2.2 test parse when service is PRACTERA', () => {
+    it('2.2.1 it should return the correct values', () => {
       try {
         parse(
           'ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0' +
@@ -107,8 +107,8 @@ describe('2. parse tests', function() {
     });
   });
 
-  describe('2.3 test parse when service is PRACTERA', function() {
-    it('2.3.1 it should return the correct values', function() {
+  describe('2.3 test parse when service is PRACTERA', () => {
+    it('2.3.1 it should return the correct values', () => {
       try {
         parse(
           'wow',
@@ -128,8 +128,8 @@ describe('2. parse tests', function() {
     });
   });
 
-  describe('2.4 test parse when service is PRACTERA', function() {
-    it('2.4.1 it should return the correct values', function() {
+  describe('2.4 test parse when service is PRACTERA', () => {
+    it('2.4.1 it should return the correct values', () => {
       // sign with RSA SHA256
       res =  parse(
         'ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0.' +
@@ -156,8 +156,8 @@ describe('2. parse tests', function() {
       );
     });
   });
-  describe('2.5 test parse when service is PRACTERA', function() {
-    it('2.5.1 it should return the correct values', function() {
+  describe('2.5 test parse when service is PRACTERA', () => {
+    it('2.5.1 it should return the correct values', () => {
       // sign with RSA SHA256
       res =  parse(
         'ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0.' +
