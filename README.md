@@ -22,7 +22,7 @@ jwtContents = jwtParse(
 );
 ```
 
-JavaScript:
+TypeScript:
 ```js
 import jwtParse from"@practera/jwt-parser";
 
