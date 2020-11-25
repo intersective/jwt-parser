@@ -25,9 +25,9 @@ jobs:
 
       # Install Dependencies 
       - name: Install dependencies
-        run: echo $SLACK_WEBHOOK_URL
+        run: echo $SONAR_TOKEN
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
 #       - name: Install dependencies
 #         run:  npm ci
