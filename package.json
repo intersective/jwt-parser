@@ -1,6 +1,6 @@
 {
   "name": "@practera/jwt-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Verifies using public keys and parses a JWT",
   "license": "MIT",
   "repository": "intersective/jwt-parser",
