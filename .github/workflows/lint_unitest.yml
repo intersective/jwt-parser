@@ -46,7 +46,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           status: ${{ job.status }}
-          author_name: GitHubAction CI for NPM package to publish
+          author_name: GitHubAction CI for lint/unit test
           mention: 'here'
           if_mention: failure,cancelled
           fields: repo,commit,eventName,ref,workflow,message
