@@ -27,5 +27,5 @@ it('1. it should return the correct values', () => {
     '-----END PUBLIC KEY-----'}),
   };
   // sign with RSA SHA256
-  res = jwtParse(token, envVariables, 'TEST', ['RS256']);
+  res = jwtParse(token, envVariables, 'TEST');
 });
