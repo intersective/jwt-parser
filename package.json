@@ -1,27 +1,39 @@
 {
   "name": "@practera/jwt-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Verifies using public keys and parses a JWT",
   "license": "MIT",
   "repository": "intersective/jwt-parser",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "keywords": [
     "practera",
     "intersective",
     "jwt"
   ],
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "pretest": "eslint --ignore-path .gitignore .",
-    "lint": "eslint --fix --ext .js,.jsx .",
-    "test": "nyc --reporter=lcov --reporter=html --reporter=text-summary mocha -- ./tests --recursive"
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lint-fix": "tslint --fix -p tsconfig.json -c tslint.json",
+    "test": "npx jest --coverage",
+    "test-update": "npx jest --updateSnapshot",
+    "build": "tsc",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint"
   },
   "dependencies": {
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
-    "eslint-config-strongloop": "^2.1.0",
-    "mocha": "^8.2.0",
-    "nyc": "^15.1.0"
+    "@types/jest": "^26.0.15",
+    "@types/jsonwebtoken": "^8.5.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "tslint": "^6.1.3",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^4.1.2"
   }
 }
