@@ -24,7 +24,7 @@ jwtContents = jwtParse(
 
 TypeScript:
 ```js
-import jwtParse from"@practera/jwt-parser";
+import jwtParse from "@practera/jwt-parser";
 
 jwtContents = jwtParse(
   token, // the token to be verified and parsed
