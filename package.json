@@ -1,6 +1,6 @@
 {
   "name": "@practera/jwt-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Verifies using public keys and parses a JWT",
   "license": "MIT",
   "repository": "intersective/jwt-parser",
@@ -17,8 +17,8 @@
   "scripts": {
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "lint-fix": "tslint --fix -p tsconfig.json -c tslint.json",
-    "test": "npx jest --coverage",
-    "test-update": "npx jest --updateSnapshot",
+    "test": "npm run build && npx jest --coverage",
+    "test-update": "npm run build && npx jest --updateSnapshot",
     "build": "tsc",
     "prepare" : "npm run build",
     "prepublishOnly" : "npm test && npm run lint",
