@@ -16,3 +16,31 @@ jobs:
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    
+    # Run Slack Notification
+    - name: Slack Notification
+      if: always() # Pick up events even if the job fails or is canceled.
+      uses: 8398a7/action-slack@v3
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      with:
+        status: ${{ job.status }}
+        author_name: NPM package attempt to publish
+        mention: 'here'
+        if_mention: failure,cancelled
+        fields: repo,commit,eventName,ref,workflow,message
+        custom_payload: |
+          {
+          username: 'GitHub Action CI WorkFlow',
+          icon_emoji: ':github:',
+          attachments: [{
+            color: '${{ job.status }}' === 'success' ? 'good' : ${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+            text:
+            `${process.env.AS_REPO}\n
+            ${process.env.AS_COMMIT}\n 
+            ${process.env.AS_EVENT_NAME}\n
+            @${process.env.AS_REF}\n
+            @${process.env.AS_WORKFLOW}\n
+            ${process.env.AS_MESSAGE}`,
+          }]
+          }
