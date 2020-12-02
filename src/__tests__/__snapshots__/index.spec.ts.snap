@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`1. it should return the correct values 1`] = `
+exports[`1. it should return the correct values [TypeScript] 1`] = `
+Object {
+  "contents": "contents of the JWT",
+}
+`;
+
+exports[`1.1 it should return the correct values [JavaScript] 1`] = `
 Object {
   "contents": "contents of the JWT",
 }
