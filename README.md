@@ -1,3 +1,7 @@
+![SonarCloud CI - Develop Branch](https://github.com/intersective/jwt-parser/workflows/SonarCloud%20CI%20-%20Develop%20Branch/badge.svg) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=intersective_jwt-parser&metric=alert_status&token=60f7eba32710225786f21cd7d54e5e6746f97476)](https://sonarcloud.io/dashboard?id=intersective_jwt-parser) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=intersective_jwt-parser&metric=coverage&token=60f7eba32710225786f21cd7d54e5e6746f97476)](https://sonarcloud.io/dashboard?id=intersective_jwt-parser)
+
+
+
 # @practera/jwt-parser
 
 Validates a JWT with a public key, parses the token and returns the contents.
