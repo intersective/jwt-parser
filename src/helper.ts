@@ -3,12 +3,12 @@ import jwt, { Algorithm } from 'jsonwebtoken';
 export function getPublicKey(envVariables: any, service = 'DEFAULT') {
   const serviceJWT = `${ service }_JWT`;
   if (typeof envVariables[serviceJWT] === 'undefined') {
-    throw Error(`service ${serviceJWT} not defined`);
+    throw Error(`Service ${service} not defined`);
   }
   try {
     return JSON.parse(envVariables[serviceJWT]).public;
   } catch (e) {
-    throw Error('invalid public key');
+    throw Error('Invalid JWT public key');
   }
 }
 
