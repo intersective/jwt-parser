@@ -22,6 +22,11 @@ export function parse(token: string, envVariables: any, service: string, algorit
       if (err) {
         throw err;
       }
+      if (envVariables.ENV &&
+        ['live', 'prod', 'production'].includes(envVariables.ENV.toLowerCase()) &&
+        !payload.exp) {
+        throw "jwt token doesn't have expire time";
+      }
       contents = payload;
     },
   );
