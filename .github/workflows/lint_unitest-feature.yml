@@ -11,7 +11,7 @@ on:
       - 'docs/**'
       - '**.md'
       - '.gitignore'
-    branches: [ 'feature/*' ]
+    branches: [ 'feature/**' ]
 
 jobs:
   sonarcloud:
