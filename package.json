@@ -20,9 +20,9 @@
     "test": "npm run build && npx jest --coverage",
     "test-update": "npm run build && npx jest --updateSnapshot",
     "build": "tsc",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint"
   },
   "dependencies": {
     "jsonwebtoken": "^8.5.1"
