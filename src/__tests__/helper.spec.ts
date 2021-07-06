@@ -22,7 +22,7 @@ describe('1. getPublicKey tests', () => {
     });
   });
   describe('1.3 when the service does not match anything in the environmental variables', () => {
-    it('1.3.1 it should throw an error because UNKNOWN_JWT is not defined', () => {
+    it('1.3.1 it should throw an error because UNKNOWN is not defined', () => {
       try {
         getPublicKey({
           DEFAULT_JWT: JSON.stringify({ public: 'default key again' }),
