@@ -4,11 +4,11 @@ exports[`1. getPublicKey tests 1.1 when the service is not defined it should ret
 
 exports[`1. getPublicKey tests 1.2 when the service is defined it should return that key 1.2.1 The PRACTERA key was returned 1`] = `"a key"`;
 
-exports[`1. getPublicKey tests 1.3 when the service does not match anything in the environmental variables 1.3.1 it should throw an error because UNKNOWN_JWT is not defined 1`] = `[Error: service UNKNOWN_JWT not defined]`;
+exports[`1. getPublicKey tests 1.3 when the service does not match anything in the environmental variables 1.3.1 it should throw an error because UNKNOWN is not defined 1`] = `[Error: Service UNKNOWN not defined]`;
 
-exports[`1. getPublicKey tests 1.4 when the service is correct, the variable exists but its contents are incorrect 1.4.1 it should throw an error because the public key is invalid 1`] = `[Error: invalid public key]`;
+exports[`1. getPublicKey tests 1.4 when the service is correct, the variable exists but its contents are incorrect 1.4.1 it should throw an error because the public key is invalid 1`] = `[Error: Invalid JWT public key]`;
 
-exports[`2. parse tests 2.1 test parse when service is PRACTERA 2.1.1 it should return the correct values 1`] = `[JsonWebTokenError: invalid token]`;
+exports[`2. parse tests 2.1 test parse when service is PRACTERA 2.1.1 it should throw error 1`] = `[JsonWebTokenError: invalid token]`;
 
 exports[`2. parse tests 2.2 test parse when service is PRACTERA 2.2.1 it should return the correct values 1`] = `[JsonWebTokenError: invalid signature]`;
 
@@ -19,6 +19,8 @@ Object {
   "contents": "contents of the JWT",
 }
 `;
+
+exports[`2. parse tests 2.4 test parse when service is PRACTERA 2.4.2 it should throw error if it is live environment 1`] = `[Error: jwt token doesn't have expire time]`;
 
 exports[`2. parse tests 2.5 test parse when service is PRACTERA 2.5.1 it should return the correct values 1`] = `
 Object {

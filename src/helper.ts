@@ -3,12 +3,12 @@ import jwt, { Algorithm } from 'jsonwebtoken';
 export function getPublicKey(envVariables: any, service = 'DEFAULT') {
   const serviceJWT = `${ service }_JWT`;
   if (typeof envVariables[serviceJWT] === 'undefined') {
-    throw Error(`service ${serviceJWT} not defined`);
+    throw Error(`Service ${service} not defined`);
   }
   try {
     return JSON.parse(envVariables[serviceJWT]).public;
   } catch (e) {
-    throw Error('invalid public key');
+    throw Error('Invalid JWT public key');
   }
 }
 
@@ -21,6 +21,11 @@ export function parse(token: string, envVariables: any, service: string, algorit
     (err: any, payload: any) => {
       if (err) {
         throw err;
+      }
+      if (envVariables.ENV &&
+        ['live', 'prod', 'production'].includes(envVariables.ENV.toLowerCase()) &&
+        !payload.exp) {
+        throw new Error("jwt token doesn't have expire time");
       }
       contents = payload;
     },
