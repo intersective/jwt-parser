@@ -10,6 +10,15 @@ $ npm install @practera/jwt-parser
 
 ## Usage
 
+### Notes
+`exp` object must present in JWT payload when `CHECK_JWT_EXPIRY` is enabled (by setting 'true' in string)
+
+### Parameters
+
+`CHECK_JWT_EXPIRY` - will invalidate a JWT when the expiry timestamp (in seconds) isn't provided.
+
+### How to use?
+
 JavaScript:
 ```js
 const jwtParse = require("@practera/jwt-parser");
