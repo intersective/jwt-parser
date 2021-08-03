@@ -23,7 +23,7 @@ export function parse(token: string, envVariables: any, service: string, algorit
         throw err;
       }
       if (envVariables.ENV &&
-        envVariables.CHECK_JWT_EXPIRY === "true" && // for the time being, allow exception
+        envVariables.CHECK_JWT_EXPIRY === 'true' && // for the time being, allow exception
         ['live', 'prod', 'production'].includes(envVariables.ENV.toLowerCase()) &&
         !payload.exp) {
         throw new Error("jwt token doesn't have expire time");
