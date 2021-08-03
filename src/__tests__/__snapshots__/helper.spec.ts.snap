@@ -20,7 +20,13 @@ Object {
 }
 `;
 
-exports[`2. parse tests 2.4 test parse when service is PRACTERA 2.4.2 it should throw error if it is live environment 1`] = `[Error: jwt token doesn't have expire time]`;
+exports[`2. parse tests 2.4 test parse when service is PRACTERA 2.4.2 it should throw error if it is live environment with "CHECK_JWT_EXPIRY=true" 1`] = `[Error: jwt token doesn't have expire time]`;
+
+exports[`2. parse tests 2.4 test parse when service is PRACTERA 2.4.3 it should return correct values if it is live environment without "CHECK_JWT_EXPIRY" 1`] = `
+Object {
+  "contents": "contents of the JWT",
+}
+`;
 
 exports[`2. parse tests 2.5 test parse when service is PRACTERA 2.5.1 it should return the correct values 1`] = `
 Object {
