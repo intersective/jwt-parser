@@ -15,13 +15,15 @@ $ npm install @practera/jwt-parser
 1. `exp` object must present in JWT payload when `CHECK_JWT_EXPIRY` is enabled (by setting 'true' in string)
 
 1. To find out JWT what content available in JWT payload, you can:
-  1. Use [jwt.io](https://jwt.io/)
-  1. in node environment run `JWT.verify(APIKEY, PUBLIC_KEY, ALGORITHM, CALLBACK);`
-    ```javascript
-      // example
+
+    1. Use [jwt.io](https://jwt.io/)
+
+    1. in node environment run `JWT.verify(APIKEY, PUBLIC_KEY, ALGORITHM, CALLBACK);`
+
+    ```js
       const JWT = require('jsonwebtoken');
       JWT.verify(
-        // APIKEY
+        // SAMPLE APIKEY
         'ewoJInR5cGUiOiAiSldUIiwKCSJhbGciOiAiUlMyNTYiCn0.' +
         'ewogICJjb250ZW50cyI6ICJjb250ZW50cyBvZiB0aGUgSldUIgp9.' +
         'jzou9_ga85x28objtX3poBGHOQ_KgIDFDmMw0NqLDjwbNHW-2bx8P' +
@@ -32,7 +34,7 @@ $ npm install @practera/jwt-parser
         '_wK2DIr3E4yBuJUBBCVUN2_Wy8KM-xhPMBx4TiKwdan7WIKxRzBF-' +
         'PkblOnezUVSs-efqxHxuvXlg',
 
-        // public key
+        // SAMPLE public key
         '-----BEGIN PUBLIC KEY-----\n' +
         'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwCtQ1cAYp7tNiA0SojsVgiO9DwsLhs5Z\n' +
         'OEkKa72RFPBUS7fDBA2cZqJha+7ZtDnQRThIaGHnXbZSABIffAB67+jBB1sg/ublYf4mvT8qXUj2\n' +
