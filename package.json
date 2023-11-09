@@ -1,9 +1,12 @@
 {
   "name": "@practera/jwt-parser",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Verifies using public keys and parses a JWT",
   "license": "MIT",
-  "repository": "intersective/jwt-parser",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intersective/jwt-parser.git"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "keywords": [
